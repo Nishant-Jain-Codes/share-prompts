@@ -4,7 +4,7 @@ import Nav from '@components/nav'
 import Provider from '@components/provider'
 
 
-export const metadata ={
+export const metadata = {
     title: 'Promptopia',
     description: 'A place to find prompts for your next project',
 }
@@ -13,17 +13,19 @@ export const metadata ={
  * @param {children} param0 
  * @returns all the content of the page wrapped in the layout
  */
-const  RootLayout = ({children}) => {
+const RootLayout = ({ children }) => {
     return (
         <html lang='en'>
             <body>
-                <div className='main'>
-                    <div className="gradient"/>
-                </div>
-                <main className="app">
-                    <Nav />
-                    {children}
-                </main>
+                <Provider>
+                    <div className='main'>
+                        <div className="gradient" />
+                    </div>
+                    <main className="app">
+                        <Nav />
+                        {children}
+                    </main>
+                </Provider>
             </body>
         </html>
     )
